@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                       // Compatível com quase tudo
+    "module": "CommonJS",                  // Padrão clássico do Node.js
+    "strict": true,                        // Ativa todas as verificações de segurança
+    "esModuleInterop": true,               // Facilita importar bibliotecas JS
+    "skipLibCheck": true,                  // Pula verificação de tipos de bibliotecas (acelera o processo)
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,                     // Útil para debug
+    "outDir": "./dist"                     // Organiza os arquivos .js compilados em uma pasta separada
+  },
+  "include": ["**/*.ts"]                   // Diz ao TS para olhar todos os arquivos .ts
+}
