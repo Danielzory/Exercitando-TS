@@ -21,3 +21,5 @@ const exibirProduto = (itens : produtoInterface[]) => {
 }
 
 exibirProduto(produtos)
+
+
