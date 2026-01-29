@@ -46,6 +46,31 @@ O Desafio:
     (ou seja, todos os campos da MensagemSecreta tornam-se opcionais).
  
 */
+
+interface MensagemSecreta <T> {
+    id: number,
+    prioridade: "baixa" | "alta" | "crítica",
+    conteudo: T
+}
+
+type MensagemEnviada = Readonly <MensagemSecreta<string>> 
+
+type RascunhoDeMensagem = Partial <MensagemSecreta<string | {}>>
+
+const missãoBlishDoll:MensagemEnviada = {
+    id: 10265,
+    prioridade: "alta",
+    conteudo: "Iniciar imediatamente, haverá um agente desfarçado em Moscou"
+}
+
+const rascunhoMoscou: RascunhoDeMensagem = {
+    conteudo: {
+        coodernadas: "123, 099, 50",
+        palavraChave: "TypeScript"
+    }
+}
+
+//-------------------------------------------------------------------------------
 let suspeito = {nome: "Darick", idade: "54 anos", crime: "Terroristomo"}
 
 function clonarObj<T> (obj:T) {
