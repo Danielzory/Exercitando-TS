@@ -80,5 +80,36 @@ const ListaCompras: Lista<string> = {
 ListaCompras.adicionar("Feijão")
 console.log(ListaCompras.itens)
 
+//------------------------------------------------------------------------------
+interface PerfilUsuario {
+    nome: string,
+    idade: number,
+    altura: number,
+    peso: number,
+    email: string
+}
 
-    
+const zory: PerfilUsuario = {
+    nome: 'Zory',
+    idade: 30,
+    altura: 171,
+    peso: 68,
+    email: "zorybr@gmail.com"
+} 
+
+function configurarPerfil(usuario: PerfilUsuario, dadoMutavel: Partial<PerfilUsuario>) {
+    return {...usuario, ...dadoMutavel}
+}
+ const zoryAtt = configurarPerfil(zory, {peso: 67, email: "zoryus@gmail.com"}) 
+ 
+//------------------------------------------------------------------------------
+
+interface SystemConfig {
+    APIKEY: string,
+    databaseUrl: string
+}
+
+const systemConfig:Readonly<SystemConfig> = {
+    APIKEY: "ASDJGSDFL)$%$(@MSLDFJSO",
+    databaseUrl:`www.zorys.com/study/sucesso`
+}
